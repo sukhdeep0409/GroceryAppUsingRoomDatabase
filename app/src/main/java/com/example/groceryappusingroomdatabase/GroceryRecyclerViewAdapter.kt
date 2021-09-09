@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.grocery_rv_item.view.*
 class GroceryRecyclerViewAdapter
 constructor(
     var list: List<GroceryItems>,
-    val groceryClickListener: GroceryItemClickListener
+    private val groceryClickListener: GroceryItemClickListener
 ): RecyclerView.Adapter<GroceryRecyclerViewAdapter.GroceryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroceryViewHolder {
@@ -42,7 +42,7 @@ constructor(
     override fun getItemCount() = list.size
 
     interface GroceryItemClickListener {
-        fun onItemClick(groceryItems: GroceryItems)
+        fun onItemClick(groceryItem: GroceryItems)
     }
 
     inner class GroceryViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
